@@ -16,4 +16,3 @@ def alert_is_displayed(context):
     wait_until_alert_is_present(context)
     alert_text = get_alert_text(context)
     assert alert_text == 'Sign up successful.'
-
