@@ -8,3 +8,4 @@ USERNAME_FIELD_MODAL_LOGIN = '#loginusername'
 
 PASSWORD_FIELD_MODAL_LOGIN = '#loginpassword'
 
+LOGOUT_BTN = '#logout2'

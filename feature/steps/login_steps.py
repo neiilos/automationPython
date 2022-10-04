@@ -1,10 +1,8 @@
-from multiprocessing.connection import wait
 from behave import given, when, then
 from utils.driver import launch_browser
-from feature.page_objects.login_page import LOGIN_URL, LOGIN_BTN, MODAL_LOGIN_BTN, USERNAME_FIELD_MODAL_LOGIN, PASSWORD_FIELD_MODAL_LOGIN
+from feature.page_objects.login_page import LOGIN_URL, LOGIN_BTN, MODAL_LOGIN_BTN, USERNAME_FIELD_MODAL_LOGIN, PASSWORD_FIELD_MODAL_LOGIN, LOGOUT_BTN
 from feature.utils.common_constants import VALID_PASSWORD, VALID_USERNAME
-from feature.page_objects.base_page import send_keys_by_css_selector, click_element_by_css_selector, get_element_text, wait_until_element_is_clickable, wait_until_text_is_present
-import time
+from feature.page_objects.base_page import send_keys_by_css_selector, click_element_by_css_selector, get_element_text, wait_until_text_is_present
 
 @given ('the user is on demoblaze page')
 def navigate_to_demoblaze(context):
@@ -19,9 +17,9 @@ def login_with_valid_credentials(context) :
     send_keys_by_css_selector(context, PASSWORD_FIELD_MODAL_LOGIN, VALID_PASSWORD)
     click_element_by_css_selector(context, MODAL_LOGIN_BTN)
 
-@then ('the user is redirected to the home of the application')
+@then ('home page is displayed')
 def user_is_redirected_to_home_page(context):
-    wait_until_text_is_present(context,'#logout2', 'Log out')
-    log_out_btn = get_element_text(context, '#logout2')
+    wait_until_text_is_present(context,LOGOUT_BTN, 'Log out')
+    log_out_btn = get_element_text(context, LOGOUT_BTN)
     assert log_out_btn == 'Log out'
     
