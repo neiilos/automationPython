@@ -22,4 +22,3 @@ def user_is_redirected_to_home_page(context):
     wait_until_text_is_present(context,LOGOUT_BTN, 'Log out')
     log_out_btn = get_element_text(context, LOGOUT_BTN)
     assert log_out_btn == 'Log out'
-    

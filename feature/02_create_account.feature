@@ -8,4 +8,3 @@ Feature: Create an account
         Given the user is on demoblaze page
         When the user creates an account
         Then confirmation message is displayed
-    

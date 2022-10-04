@@ -8,4 +8,3 @@ Feature: Login to demoblaze
         Given the user is on demoblaze page
         When the user logs in with valid credentials
         Then home page is displayed
-        
