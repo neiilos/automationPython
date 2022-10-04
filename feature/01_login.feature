@@ -7,4 +7,4 @@ Feature: Login to demoblaze
     Scenario: Login with valid credentials
         Given the user is on demoblaze page
         When the user logs in with valid credentials
-        Then the user is redirected to the home of the application
+        Then home page is displayed

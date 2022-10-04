@@ -1,7 +1,8 @@
-from cgitb import text
+import uuid
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from uuid import uuid4
 
 def click_element_by_css_selector(self, css_selector):
     self.driver.find_element(By.CSS_SELECTOR, css_selector).click()
@@ -20,3 +21,12 @@ def wait_until_element_is_clickable(self, css_selector):
 
 def wait_until_text_is_present(self, css_selector, text):
     WebDriverWait(self.driver, 20).until(expected_conditions.text_to_be_present_in_element((By.CSS_SELECTOR, css_selector), text))
+
+def wait_until_alert_is_present(self):
+    WebDriverWait(self.driver, 20).until(expected_conditions.alert_is_present())
+    
+def get_alert_text(self):
+    return self.driver.switch_to.alert.text
+
+def create_unique_user():
+    return str(uuid.uuid4())
