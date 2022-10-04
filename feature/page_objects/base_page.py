@@ -1,5 +1,3 @@
-from cgitb import text
-from lib2to3.pgen2 import driver
 import uuid
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
@@ -30,5 +28,5 @@ def wait_until_alert_is_present(self):
 def get_alert_text(self):
     return self.driver.switch_to.alert.text
 
-def get_uuid4():
+def create_unique_user():
     return str(uuid.uuid4())

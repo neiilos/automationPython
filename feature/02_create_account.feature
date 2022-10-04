@@ -6,5 +6,6 @@ Feature: Create an account
 
     Scenario: Create an account
         Given the user is on demoblaze page
-        When the user complete the Sign Up form
-        Then confirm message is displayed
+        When the user creates an account
+        Then confirmation message is displayed
+    
