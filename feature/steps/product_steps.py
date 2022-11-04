@@ -7,10 +7,11 @@ from feature.page_objects.cart_page import PRODUCT_CART_TITLE
 from feature.page_objects.home_page import SAMSUNG_GALAXY_S6_LINK
 
 
-@given ('the user has a product on cart')
+@given('the user has a product on cart')
 def product_in_cart(context):
     navigate_to_demoblaze(context)
     add_product_to_the_cart(context)
+
 
 @when('the user adds a product to cart')
 def add_product_to_the_cart(context):
@@ -18,6 +19,7 @@ def add_product_to_the_cart(context):
     click_element_by_css_selector(context, ADD_TO_CART_BTN)
     wait_until_alert_is_present(context)
     accept_alert(context)
+
 
 @then('the product shows into cart')
 def chek_cart(context):

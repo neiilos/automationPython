@@ -6,11 +6,13 @@ from feature.page_objects.banner_page import SIGNUP_BTN, LOGIN_BTN, LOGOUT_BTN
 from utils.driver import launch_browser
 from feature.page_objects.base_page import send_keys_by_css_selector, click_element_by_css_selector, get_element_text, wait_until_text_is_present
 
+
 @given('the user is on demoblaze page')
 def navigate_to_demoblaze(context):
     launch_browser(context, 'Chrome')
     context.driver.maximize_window()
     context.driver.get(LOGIN_URL)
+
 
 @when('the user logs in with valid credentials')
 def login_with_valid_credentials(context):
@@ -21,6 +23,7 @@ def login_with_valid_credentials(context):
         context, PASSWORD_FIELD_MODAL_LOGIN, VALID_PASSWORD)
     click_element_by_css_selector(context, MODAL_LOGIN_BTN)
 
+
 @when('the user creates an account')
 def complete_sign_up_form(context):
     click_element_by_css_selector(context, SIGNUP_BTN)
@@ -30,11 +33,13 @@ def complete_sign_up_form(context):
         context, PASSWORD_FIELD_MODAL_SIGNUP, VALID_PASSWORD)
     click_element_by_css_selector(context, MODAL_SIGNUP_BTN)
 
+
 @then('home page is displayed')
 def user_is_redirected_to_home_page(context):
     wait_until_text_is_present(context, LOGOUT_BTN, 'Log out')
     log_out_btn = get_element_text(context, LOGOUT_BTN)
     assert log_out_btn == 'Log out'
+
 
 @then('confirmation message is displayed')
 def alert_is_displayed(context):

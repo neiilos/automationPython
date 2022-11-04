@@ -7,13 +7,3 @@ PASSWORD_FIELD_MODAL_SIGNUP = '#sign-password'
 SAMSUNG_GALAXY_S6_LINK = '#tbodyid > div:nth-child(1) > div > div > h4 > a'
 USERNAME_FIELD_MODAL_LOGIN = '#loginusername'
 USERNAME_FIELD_MODAL_SIGNUP = '#sign-username'
-
-
-
-
-
-
-
-
-
-
