@@ -9,10 +9,10 @@ Feature: cart
         When the user adds a product to cart
         Then the product shows into cart
 
-    #Scenario: Delete a product
-     #   Given the user has a product on cart 
-      #  When the user deletes a product 
-       # Then the product is deleted
+    Scenario: Delete a product
+        Given the user has a product on cart 
+        When the user deletes a product 
+        Then the product is deleted
 
     #Scenario: Add more than one product to cart
      #   Given the user is on demoblaze page

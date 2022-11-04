@@ -24,7 +24,7 @@ def wait_until_element_displayed(self, css_selector):
 
 def wait_until_element_is_clickable(self, css_selector):
     WebDriverWait(self.driver, 20).until(
-        expected_conditions.element_to_be_clickable(By.CSS_SELECTOR, css_selector))
+        expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, css_selector)))
 
 
 def wait_until_text_is_present(self, css_selector, text):
@@ -40,9 +40,14 @@ def wait_until_alert_is_present(self):
 def get_alert_text(self):
     return self.driver.switch_to.alert.text
 
+
 def accept_alert(self):
     self.driver.switch_to.alert.accept()
 
 
 def create_unique_user():
     return str(uuid.uuid4())
+
+
+def get_elements(self, css_selector):
+    self.driver.find_elements(By.CSS_SELECTOR, css_selector)
