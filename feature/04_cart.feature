@@ -9,12 +9,12 @@ Feature: cart
         When the user adds a product to cart
         Then the product shows into cart
 
+    Scenario: Add more than one product to cart
+        Given the user is on demoblaze page
+        When the user adds two times the same product to cart
+        Then the products shows into cart
+
     Scenario: Delete a product
         Given the user has a product on cart
         When the user deletes a product
         Then the product is deleted
-
-#Scenario: Add more than one product to cart
-#   Given the user is on demoblaze page
-#  When the user buys a product
-# Then confirmation message is displayed
